@@ -3,7 +3,7 @@ import {
 	View,
 	TouchableWithoutFeedback,
 	Keyboard,
-	Modal as RNModal,
+	Modal,
 } from 'react-native'
 import Animated, {
 	Easing,
@@ -37,7 +37,7 @@ const PopupModal: React.FC<PopupModalProps> = ({ children, onDismiss, isVisible 
 	if (!isVisible) return <View />
 
 	return (
-		<RNModal transparent visible={isVisible}>
+		<Modal transparent visible={isVisible}>
 			<View style={styles.fullScreen}>
 				<TouchableWithoutFeedback onPress={onDismiss}>
 					<Animated.View style={[ styles.backdrop, backdropAnimatedStyle]} />
@@ -46,7 +46,7 @@ const PopupModal: React.FC<PopupModalProps> = ({ children, onDismiss, isVisible 
 					{children}
 				</Animated.View>
 			</View>
-		</RNModal>
+		</Modal>
 	)
 }
 

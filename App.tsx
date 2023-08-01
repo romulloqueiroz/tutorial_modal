@@ -7,10 +7,12 @@ export default function App() {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => setIsVisible(true)} style={styles.button}>
-        <Text style={styles.text}>Show Modal</Text>
+        <Text style={styles.buttonText}>Show Modal</Text>
       </TouchableOpacity>
       <PopupModal isVisible={isVisible} onDismiss={() => setIsVisible(false)}>
-        <Text>Hi</Text>
+        <View style={styles.card}>
+          <Text style={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+        </View>
       </PopupModal>
     </View>
   );
@@ -28,9 +30,20 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5
   },
-  text: {
+  buttonText: {
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold'
-  }
+  },
+  card: {
+    backgroundColor: '#3F4553',
+    borderColor: '#969BA7',
+    borderWidth: 2,
+    padding: 16,
+    borderRadius: 4,
+    maxWidth: 300,
+  },
+  cardText: {
+    color: '#fff',
+  },
 });
